@@ -1,0 +1,24 @@
+[package]
+name = "ansi-player-rs"
+authors = ["Ryan Castellucci <code@ryanc.org>"]
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+format-bytes = "0.3"
+
+flate2 = { version = "1.0", optional = true }
+xz2 = { version = "0.1", optional = true }
+zstd = { version = "0.13", optional = true }
+
+[features]
+default = ["unzstd"]
+gunzip = ["dep:flate2"]
+unxz = ["dep:xz2"]
+unzstd = ["dep:zstd"]
+
+[profile.lto]
+inherits = "release"
+lto = true
