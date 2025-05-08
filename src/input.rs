@@ -19,7 +19,6 @@ pub struct Input<'a> {
 
 //const BZIP2_MAGIC: [u8; 3] = *b"BZh";
 //const LZ4_MAGIC:   [u8; 4] = [0x04, 0x22, 0x4d, 0x18];
-//const LZO_MAGIC:   [u8; 9] = *b"\x89LZO\0\r\n\x1a\n";
 
 #[cfg(feature = "gunzip")]
 const GZIP_MAGIC:  [u8; 3] = [0x1f, 0x8b, 0x08];
